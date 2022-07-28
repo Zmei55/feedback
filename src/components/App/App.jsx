@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button } from "../Button/Button";
+import { FeedbackOptions } from "../FeedbackOptions/FeedbackOptions";
+import { Statistics } from "../Statistics/Statistics";
 
 export class App extends Component {
   state = {
@@ -32,7 +33,6 @@ export class App extends Component {
     const { bad } = this.state;
 
     const countTotalFeedback = good + neutral + bad;
-
     const countPositiveFeedbackPercentage = Math.round(
       (100 * good) / countTotalFeedback
     );
@@ -40,43 +40,22 @@ export class App extends Component {
     return (
       <React.Fragment>
         <section>
-          <h2>Please leave feedback</h2>
-          <div>
-            <Button
-              type="button"
-              handleIncrement={this.handleIncrementGood}
-              text="Good"
-            />
-            <Button
-              type="button"
-              handleIncrement={this.handleIncrementNuetral}
-              text="Neutral"
-            />
-            <Button
-              type="button"
-              handleIncrement={this.handleIncrementBad}
-              text="Bad"
-            />
-          </div>
+          <FeedbackOptions
+            title="Please leave feedback"
+            onIncrementGood={this.handleIncrementGood}
+            onIncrementNuetral={this.handleIncrementNuetral}
+            onIncrementBad={this.handleIncrementBad}
+          />
         </section>
         <section>
-          <h2>Statistics</h2>
-          <p>
-            Goog: <span>{good}</span>
-          </p>
-          <p>
-            Neutral: <span>{neutral}</span>
-          </p>
-          <p>
-            Bad: <span>{bad}</span>
-          </p>
-          <p>
-            Total: <span>{countTotalFeedback}</span>
-          </p>
-          <p>
-            Positive feedback:{" "}
-            <span>{`${countPositiveFeedbackPercentage}%`}</span>
-          </p>
+          <Statistics
+            title="Statistics"
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={countTotalFeedback}
+            positivePercentage={countPositiveFeedbackPercentage}
+          />
         </section>
       </React.Fragment>
     );
