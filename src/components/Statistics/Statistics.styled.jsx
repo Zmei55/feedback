@@ -1,9 +1,21 @@
 import styled from "@emotion/styled";
 
-export const StatisticsContainer = styled.div``;
+export const StatisticsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-export const StatisticsTitle = styled.h2``;
+export const Title = styled.h2`
+  margin-right: auto;
+  margin-left: auto;
+`;
 
-export const StatisticsList = styled.ul``;
+export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+`;
 
-export const StatisticsListItem = styled.li``;
+export const Item = styled.li`
+  margin-right: auto;
+  margin-left: auto;
+`;

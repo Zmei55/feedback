@@ -1,11 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  StatisticsContainer,
-  StatisticsTitle,
-  StatisticsList,
-  StatisticsListItem,
-} from "./Statistics.styled";
+import { StatisticsContainer, Title, List, Item } from "./Statistics.styled";
+import { Notification } from "../Notification/Notification";
 
 export const Statistics = ({
   title,
@@ -17,24 +13,28 @@ export const Statistics = ({
 }) => {
   return (
     <StatisticsContainer>
-      <StatisticsTitle>{title}</StatisticsTitle>
-      <StatisticsList>
-        <StatisticsListItem>
-          Goog: <span>{good}</span>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          Neutral: <span>{neutral}</span>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          Bad: <span>{bad}</span>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          Total: <span>{total}</span>
-        </StatisticsListItem>
-        <StatisticsListItem>
-          Positive feedback: <span>{`${positivePercentage}%`}</span>
-        </StatisticsListItem>
-      </StatisticsList>
+      <Title>{title}</Title>
+      {total > 0 ? (
+        <List>
+          <Item>
+            Goog: <span>{good}</span>
+          </Item>
+          <Item>
+            Neutral: <span>{neutral}</span>
+          </Item>
+          <Item>
+            Bad: <span>{bad}</span>
+          </Item>
+          <Item>
+            Total: <span>{total}</span>
+          </Item>
+          <Item>
+            Positive feedback: <span>{`${positivePercentage}%`}</span>
+          </Item>
+        </List>
+      ) : (
+        <Notification message="There is no feedback"></Notification>
+      )}
     </StatisticsContainer>
   );
 };
