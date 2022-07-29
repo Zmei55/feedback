@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const OptionsContainer = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ export const OptionsContainer = styled.div`
 export const Titel = styled.h2`
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: ${(props) => props.theme.spacing(2)};
+  margin-bottom: ${props => props.theme.spacing(2)};
 `;
 
 export const Options = styled.div`

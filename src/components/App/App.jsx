@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Section } from "./App.styled";
-import { FeedbackOptions } from "../FeedbackOptions/FeedbackOptions";
-import { Statistics } from "../Statistics/Statistics";
+import React, { Component } from 'react';
+import { Section } from './App.styled';
+import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
+import { Statistics } from '../Statistics/Statistics';
 
 export class App extends Component {
   state = {
@@ -11,19 +11,19 @@ export class App extends Component {
   };
 
   handleIncrementGood = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       good: prevState.good + 1,
     }));
   };
 
   handleIncrementNuetral = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       neutral: prevState.neutral + 1,
     }));
   };
 
   handleIncrementBad = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       bad: prevState.bad + 1,
     }));
   };
@@ -35,7 +35,7 @@ export class App extends Component {
 
     const countTotalFeedback = good + neutral + bad;
     const countPositiveFeedbackPercentage = Math.round(
-      (100 * good) / countTotalFeedback
+      (100 * good) / countTotalFeedback,
     );
 
     return (

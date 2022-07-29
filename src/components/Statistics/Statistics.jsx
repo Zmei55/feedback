@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StatisticsContainer, Title, List, Item } from "./Statistics.styled";
-import { Notification } from "../Notification/Notification";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StatisticsContainer, Title, List, Item } from './Statistics.styled';
+import { Notification } from '../Notification/Notification';
 
 export const Statistics = ({
   title,

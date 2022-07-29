@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button } from "../Button/Button";
-import { OptionsContainer, Titel, Options } from "./FeedbackOptions.styled";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button } from '../Button/Button';
+import { OptionsContainer, Titel, Options } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({
   title,

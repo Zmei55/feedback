@@ -1,4 +1,4 @@
-import { Btn } from "./Button.styled";
+import { Btn } from './Button.styled';
 
 export const Button = ({ text, handleIncrement }) => {
   return (
