@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "../Button/Button";
+import { OptionsContainer, Titel, Options } from "./FeedbackOptions.styled";
 
 export const FeedbackOptions = ({
   title,
@@ -9,9 +10,9 @@ export const FeedbackOptions = ({
   onIncrementBad,
 }) => {
   return (
-    <React.Fragment>
-      <h2>{title}</h2>
-      <div>
+    <OptionsContainer>
+      <Titel>{title}</Titel>
+      <Options>
         <Button type="button" handleIncrement={onIncrementGood} text="Good" />
         <Button
           type="button"
@@ -19,8 +20,8 @@ export const FeedbackOptions = ({
           text="Neutral"
         />
         <Button type="button" handleIncrement={onIncrementBad} text="Bad" />
-      </div>
-    </React.Fragment>
+      </Options>
+    </OptionsContainer>
   );
 };
 

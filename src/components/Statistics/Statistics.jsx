@@ -1,5 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {
+  StatisticsContainer,
+  StatisticsTitle,
+  StatisticsList,
+  StatisticsListItem,
+} from "./Statistics.styled";
 
 export const Statistics = ({
   title,
@@ -10,26 +16,26 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <React.Fragment>
-      <h2>{title}</h2>
-      <ul>
-        <li>
+    <StatisticsContainer>
+      <StatisticsTitle>{title}</StatisticsTitle>
+      <StatisticsList>
+        <StatisticsListItem>
           Goog: <span>{good}</span>
-        </li>
-        <li>
+        </StatisticsListItem>
+        <StatisticsListItem>
           Neutral: <span>{neutral}</span>
-        </li>
-        <li>
+        </StatisticsListItem>
+        <StatisticsListItem>
           Bad: <span>{bad}</span>
-        </li>
-        <li>
+        </StatisticsListItem>
+        <StatisticsListItem>
           Total: <span>{total}</span>
-        </li>
-        <li>
+        </StatisticsListItem>
+        <StatisticsListItem>
           Positive feedback: <span>{`${positivePercentage}%`}</span>
-        </li>
-      </ul>
-    </React.Fragment>
+        </StatisticsListItem>
+      </StatisticsList>
+    </StatisticsContainer>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Section } from "./App.styled";
 import { FeedbackOptions } from "../FeedbackOptions/FeedbackOptions";
 import { Statistics } from "../Statistics/Statistics";
 
@@ -39,15 +40,15 @@ export class App extends Component {
 
     return (
       <React.Fragment>
-        <section>
+        <Section>
           <FeedbackOptions
             title="Please leave feedback"
             onIncrementGood={this.handleIncrementGood}
             onIncrementNuetral={this.handleIncrementNuetral}
             onIncrementBad={this.handleIncrementBad}
           />
-        </section>
-        <section>
+        </Section>
+        <Section>
           <Statistics
             title="Statistics"
             good={good}
@@ -56,7 +57,7 @@ export class App extends Component {
             total={countTotalFeedback}
             positivePercentage={countPositiveFeedbackPercentage}
           />
-        </section>
+        </Section>
       </React.Fragment>
     );
   }

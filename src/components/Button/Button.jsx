@@ -1,7 +1,9 @@
+import { Btn } from "./Button.styled";
+
 export const Button = ({ text, handleIncrement }) => {
   return (
-    <button type="button" onClick={handleIncrement}>
+    <Btn type="button" onClick={handleIncrement}>
       {text}
-    </button>
+    </Btn>
   );
 };
