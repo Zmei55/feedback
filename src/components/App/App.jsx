@@ -10,6 +10,10 @@ export class App extends Component {
     bad: 0,
   };
 
+  onLeaveFeedback = label => {
+    this.setState(prevState => ({ [label]: prevState[label] + 1 }));
+  };
+
   handleIncrementGood = () => {
     this.setState(prevState => ({
       good: prevState.good + 1,
@@ -42,10 +46,9 @@ export class App extends Component {
       <React.Fragment>
         <Section>
           <FeedbackOptions
+            options={this.state}
             title="Please leave feedback"
-            onIncrementGood={this.handleIncrementGood}
-            onIncrementNuetral={this.handleIncrementNuetral}
-            onIncrementBad={this.handleIncrementBad}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
         <Section>
