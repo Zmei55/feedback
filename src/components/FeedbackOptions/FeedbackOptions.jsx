@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   OptionsContainer,
   Titel,
@@ -28,9 +28,8 @@ export const FeedbackOptions = ({ options, title, onLeaveFeedback }) => {
   );
 };
 
-// FeedbackOptions.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   onIncrementGood: PropTypes.func.isRequired,
-//   onIncrementNuetral: PropTypes.func.isRequired,
-//   onIncrementBad: PropTypes.func.isRequired,
-// };
+FeedbackOptions.propTypes = {
+  options: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
